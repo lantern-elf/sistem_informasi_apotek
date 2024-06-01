@@ -1,0 +1,232 @@
+:root {
+    --accent: #9DDE8B;
+    --card: #006769;
+}
+
+::-webkit-scrollbar{
+    width: 0px;
+}
+
+*, html {
+    padding: 0;
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.nav_menu>a, .account>a {
+    text-decoration: none;
+    color: whitesmoke;
+    font-weight: bold;
+    font-size: 32px;
+}
+
+li{
+    list-style-type: none;
+}
+
+input {
+    border-radius: 5px;
+    width: 400px;
+    height: 25px;
+    padding: 7px;
+    font-family: 'Courier New', Courier, monospace;
+    border: 1px solid black;
+    background-color: transparent;
+    font-style: none;
+    font-size: 16px;
+}
+
+input[type=submit] {
+    background-color: white;
+    width: 100%;
+    height: 40px;
+    position: relative;
+    transition-duration: .3s;
+}
+
+input[type=submit]:hover {
+    background-color: var(--accent);
+    cursor: pointer;
+}
+
+input:focus {
+    outline: none;
+}
+
+.parent {
+    width: 100%;
+    height: 100vh;
+    padding: 16px;
+}
+
+.display_center{
+    display: grid;
+    place-items: center;
+}
+
+.nav_container {
+    display: flex;
+    background-color: var(--card);
+    margin: 16px;
+    padding: 8px;
+    border-radius: 15px;
+}
+
+.nav_menu {
+    margin: 5px;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.navbar_brand {
+    border-radius: 5px;
+    padding-left: 4px;
+    padding-right: 4px;
+    transition-duration: .3s;
+    padding-top: 4px;
+}
+
+.navbar_brand:hover {
+    background-color: var(--accent);
+}
+
+.icon {
+    width: 32px;
+    height: 32px;
+    align-items: center;
+    font-size: 32px;
+    transition-duration: .3s;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    padding: 4px;
+    color: whitesmoke;
+}
+
+.icon:hover {
+    background-color: var(--accent);
+}
+
+.icon_button{
+    background-color: transparent;
+    border: none;
+}
+
+.card {
+    background-color: var(--card);
+    border-radius: 15px;
+}
+
+.login_container {
+    background-color: white;
+    color: black;
+    margin: auto;
+    padding: 20px;
+    border: black 1px solid;
+}
+
+.login_head {
+    font-weight: bold;
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.login_get_input {
+    font-size: 20px;
+    display: grid;
+    justify-content: center;
+}
+
+.form_login {
+    font-size: 20px;
+    width: 100%;
+}
+
+.input_list{
+    display: grid;
+}
+
+.input_list>li{
+    display: grid;
+    justify-content: start;
+    padding-bottom: 8px;
+}
+
+.input_list label{
+    width: 100%;
+}
+
+.input_component {
+    margin: auto;
+}
+
+.account {
+    margin: 5px;
+    display: flex;
+    justify-content: space-evenly;
+    width: 64px;
+}
+
+/* .register{
+    height: 32px;
+} */
+
+.register_link{
+    color: black;
+    font-size: 16px;
+}
+
+.submit_register, .submit_login{
+    padding-block: 16px;
+}
+
+.account_dropdown{
+    z-index: 999;
+    position: fixed;
+    top: 70px;
+    display: none;
+}
+
+.account_dropdown a{
+    color: black;
+    padding: 4px;
+    background-color: whitesmoke;
+    transition-duration: .3s;
+}
+
+.account_dropdown a:hover{
+    background-color: var(--accent);
+}
+
+.content{
+    width: 100%;
+    height: 100vh;
+    padding: 2px;
+}
+
+table{
+    width: 512px;
+    border-collapse: collapse;
+    border: 1px black solid;
+}
+
+th, td{
+    padding: 8px;
+}
+
+.table_content{
+    width: fit-content;
+    height: fit-content;
+}
+
+.table_header label{
+    font-weight: 700;
+    font-size: 18px;
+}
