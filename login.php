@@ -41,17 +41,17 @@ if (isset($_POST['login'])) {
                     <ul class="input_list">
                         <li>
                             <label class="input_component" for="">username</label>
-                            <input class="input_component" type="text" name="username">
+                            <input class="login_input_box" type="text" name="username">
                         </li>
                         <li>
                             <label class="input_component" for="">Password</label>
-                            <input class="input_component" type="password" name="password">
+                            <input class="login_input_box" type="password" name="password">
                         </li>
                         <li>
                             <a class="register_link" href="/register.php">Register now</a>
                         </li>
                         <li class="submit_login">
-                            <input class="input_component" type="submit" name="login" value="Log in">
+                            <input class="login_input_box" type="submit" name="login" value="Log in">
                         </li>
                     </ul>
                 </form>

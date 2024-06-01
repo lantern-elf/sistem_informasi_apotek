@@ -43,21 +43,21 @@ if (isset($_POST['register'])) {
                     <ul class="input_list">
                         <li>
                             <label class="input_component" for="">Create username</label>
-                            <input class="input_component" type="text" name="username">
+                            <input class="login_input_box" type="text" name="username">
                         </li>
                         <li>
                             <label class="input_component" for="">Create Password</label>
-                            <input class="input_component" type="password" name="created_password">
+                            <input class="login_input_box" type="password" name="created_password">
                         </li>
                         <li>
                             <label class="input_component" for="">Confirm Password</label>
-                            <input class="input_component" type="password" name="confirmed_password">
+                            <input class="login_input_box" type="password" name="confirmed_password">
                         </li>
                         <li>
                             <a class="register_link" href="login.php">Login now</a>
                         </li>
                         <li class="submit_register">
-                            <input class="input_component" type="submit" name="register" value="Register">
+                            <input class="login_input_box" type="submit" name="register" value="Register">
                         </li>
                     </ul>
                 </form>

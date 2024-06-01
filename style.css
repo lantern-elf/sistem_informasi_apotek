@@ -29,11 +29,17 @@ li{
     list-style-type: none;
 }
 
-input {
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.login_input_box{
     border-radius: 5px;
-    width: 400px;
+    width: 300px;
     height: 25px;
-    padding: 7px;
+    padding: 4px;
     font-family: 'Courier New', Courier, monospace;
     border: 1px solid black;
     background-color: transparent;
@@ -41,21 +47,25 @@ input {
     font-size: 16px;
 }
 
-input[type=submit] {
+.login_input_box[type=submit] {
     background-color: white;
     width: 100%;
-    height: 40px;
+    height: 100%;
     position: relative;
     transition-duration: .3s;
 }
 
-input[type=submit]:hover {
+.login_input_box[type=submit]:hover {
     background-color: var(--accent);
     cursor: pointer;
 }
 
-input:focus {
+.login_input_box:focus {
     outline: none;
+}
+
+.submit_register, .submit_login{
+    padding-block: 16px;
 }
 
 .parent {
@@ -67,6 +77,12 @@ input:focus {
 .display_center{
     display: grid;
     place-items: center;
+}
+
+nav{
+    position: sticky;
+    top: 16px
+
 }
 
 .nav_container {
@@ -167,6 +183,29 @@ input:focus {
     margin: auto;
 }
 
+.item_input_table{
+    width: 102px;
+    background-color: transparent;
+    border: none;
+    text-align: center;
+}
+
+.item_input_table:focus{
+    outline: none;
+}
+
+.item_input_table[type=submit]{
+    border: black 1px solid;
+    width: 68px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition-duration: .3s;
+}
+
+.item_input_table[type=submit]:hover{
+    background-color: var(--accent);
+}
+
 .account {
     margin: 5px;
     display: flex;
@@ -183,9 +222,7 @@ input:focus {
     font-size: 16px;
 }
 
-.submit_register, .submit_login{
-    padding-block: 16px;
-}
+
 
 .account_dropdown{
     z-index: 999;
@@ -199,6 +236,11 @@ input:focus {
     padding: 4px;
     background-color: whitesmoke;
     transition-duration: .3s;
+    display: flex;
+    place-items: center;
+    text-align: center;
+    width: fit-content;
+    height: fit-content;
 }
 
 .account_dropdown a:hover{
@@ -219,14 +261,52 @@ table{
 
 th, td{
     padding: 8px;
+    
+}
+
+td{
+    text-align: center;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
 }
 
 .table_content{
     width: fit-content;
     height: fit-content;
+    width: 50%;
 }
 
 .table_header label{
     font-weight: 700;
     font-size: 18px;
+}
+
+.data_parent{
+    display: flex;
+    width: 100%;
+}
+
+.act{
+    background-color: white;
+    position: fixed;
+    transition-duration: .3s;
+}
+
+.act a{
+    transition-duration: .3s;
+}
+
+.act a:hover{
+    background-color: var(--accent);
+}
+
+.dropdown_act .act{
+    display: none;
+    transition-duration: .3s;
+}
+
+.dropdown_act:hover .act{
+    display: grid;
 }
