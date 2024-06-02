@@ -4,10 +4,31 @@
 }
 
 ::-webkit-scrollbar{
-    width: 0px;
+    width: 8px;
+    position: absolute;
+    display: fixed;
+    transition-duration: .3s;
 }
 
-*, html {
+::-webkit-scrollbar:hover{
+    -webkit-mask-position: left top;
+    display: block;
+    /* left: 100px; */
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+*, html, body {
     padding: 0;
     margin: 0;
     font-family: 'Courier New', Courier, monospace;
@@ -108,9 +129,17 @@ nav{
     padding-top: 4px;
 }
 
+.navbar_brand:active {
+    background-color: var(--accent);
+}
+
 .navbar_brand:hover {
     background-color: var(--accent);
 }
+
+/* .navbar_supplies:link{
+    background-color: var(--accent);
+} */
 
 .icon {
     width: 32px;
@@ -188,6 +217,8 @@ nav{
     background-color: transparent;
     border: none;
     text-align: center;
+    border: 1px black solid;
+    border-radius: 4px;
 }
 
 .item_input_table:focus{
@@ -222,8 +253,6 @@ nav{
     font-size: 16px;
 }
 
-
-
 .account_dropdown{
     z-index: 999;
     position: fixed;
@@ -247,10 +276,9 @@ nav{
     background-color: var(--accent);
 }
 
-.content{
-    width: 100%;
+main{
     height: 100vh;
-    padding: 2px;
+    padding: 16px;
 }
 
 table{
@@ -276,11 +304,17 @@ tr:nth-child(even) {
     width: fit-content;
     height: fit-content;
     width: 50%;
+    padding: 16px;
+    overflow-x:auto;
 }
 
 .table_header label{
     font-weight: 700;
     font-size: 18px;
+}
+
+.supplies_table{
+    width: 100%;
 }
 
 .data_parent{
@@ -290,7 +324,7 @@ tr:nth-child(even) {
 
 .act{
     background-color: white;
-    position: fixed;
+    position: absolute;
     transition-duration: .3s;
 }
 
@@ -309,4 +343,8 @@ tr:nth-child(even) {
 
 .dropdown_act:hover .act{
     display: grid;
+}
+
+.data{
+    display: flex;
 }
