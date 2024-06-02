@@ -300,6 +300,10 @@ tr:nth-child(even) {
     background-color: #dddddd;
 }
 
+table a{
+    color: black;
+}
+
 .table_content{
     width: fit-content;
     height: fit-content;

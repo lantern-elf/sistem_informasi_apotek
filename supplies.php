@@ -26,6 +26,7 @@ include 'connection.php';
                         <th>No</th>
                         <th>ID</th>
                         <th>Name</th>
+                        <th>Category</th>
                         <th>Total</th>
                         <th>Price (Rp)</th>
                         <th>Action</th>
@@ -39,6 +40,7 @@ include 'connection.php';
                             <td><?php echo $no++; ?></td>
                             <td><?php echo $row['item_id']; ?></td>
                             <td><?php echo $row['item_name']; ?></td>
+                            <td><?php echo $row['item_category']; ?></td>
                             <td><?php echo $row['item_total']; ?></td>
                             <td><?php echo $row['price']; ?></td>
                             <td>
@@ -46,7 +48,7 @@ include 'connection.php';
                                     <i class="fa-sharp fa-solid fa-ellipsis"></i>
                                     <div class="act">
                                         <a href="supplies_delete.php?item_id=<?php echo $row['item_id']; ?>">Delete</a>
-                                        <a href="">Edit</a>
+                                        <a href="supplies_edit.php?item_id=<?php echo $row['item_id']; ?>">Edit</a>
                                         <a href="">Buy</a>
                                     </div>
                                 </ul>
@@ -61,6 +63,13 @@ include 'connection.php';
                             <td><?php echo $no++; ?></td>
                             <td><?php echo $id_preview + 1; ?></td>
                             <td><input class="item_input_table" placeholder="Item name" type="text" name="item_name"></td>
+                            <td>
+                                <select class="item_input_table" placeholder="Item name" type="text" name="item_category">
+                                    <option value="Over-the-counter drugs">Over-the-counter drugs</option>
+                                    <option value="Limited over-the-counter drugs">Limited over-the-counter drugs</option>
+                                    <option value="Hard drugs">Hard drugs</option>
+                                </select>
+                            </td>
                             <td><input class="item_input_table" placeholder="Item total" type="number" name="item_total"></td>
                             <td><input class="item_input_table" placeholder="Item price" type="number" name="item_price"></td>
                             <td><input class="item_input_table" type="submit"></td>
