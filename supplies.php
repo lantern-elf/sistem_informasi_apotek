@@ -33,11 +33,11 @@ include 'connection.php';
                     </tr>
                     <?php
                     // error_reporting(0);
-                    $get_data = mysqli_query($db, "SELECT * FROM supplies");
-                    $no = 1;
-                    foreach ($get_data as $row) { ?>
+                    $get_data_supplies = mysqli_query($db, "SELECT * FROM supplies");
+                    $no_supplies = 1;
+                    foreach ($get_data_supplies as $row) { ?>
                         <tr>
-                            <td><?php echo $no++; ?></td>
+                            <td><?php echo $no_supplies++; ?></td>
                             <td><?php echo $row['item_id']; ?></td>
                             <td><?php echo $row['item_name']; ?></td>
                             <td><?php echo $row['item_category']; ?></td>
@@ -49,7 +49,7 @@ include 'connection.php';
                                     <div class="act">
                                         <a href="supplies_delete.php?item_id=<?php echo $row['item_id']; ?>">Delete</a>
                                         <a href="supplies_edit.php?item_id=<?php echo $row['item_id']; ?>">Edit</a>
-                                        <a href="">Buy</a>
+                                        <a href="supplies_buy.php?item_id=<?php echo $row['item_id']; ?>">Buy</a>
                                     </div>
                                 </ul>
                             </td>
@@ -60,7 +60,7 @@ include 'connection.php';
                             <?php
                             $id_preview = $row['item_id'];
                             ?>
-                            <td><?php echo $no++; ?></td>
+                            <td><?php echo $no_supplies++; ?></td>
                             <td><?php echo $id_preview + 1; ?></td>
                             <td><input class="item_input_table" placeholder="Item name" type="text" name="item_name"></td>
                             <td>
@@ -81,6 +81,38 @@ include 'connection.php';
                 <div class="table_header">
                     <label for="">Transactions</label>
                 </div>
+                <table class="supplies_table">
+                    <tr>
+                        <th>No</th>
+                        <th>Transactions On</th>
+                        <th>Item Id</th>
+                        <th>Item Name</th>
+                        <th>Total Item</th>
+                        <th>Total Price</th>
+                        <th>Action</th>
+                    </tr>
+                    <?php
+                    $no_transactions = 1;
+                    $get_data_transactions = mysqli_query($db, "SELECT * FROM transactions");
+                    foreach ($get_data_transactions as $row) { ?>
+                        <tr>
+                            <td><?php echo $no_transactions++; ?></td>
+                            <td><?php echo $row['transaction_on']; ?></td>
+                            <td><?php echo $row['transaction_item_id']; ?></td>
+                            <td><?php echo $row['item_name']; ?></td>
+                            <td><?php echo $row['total_item']; ?></td>
+                            <td><?php echo $row['total_price']; ?></td>
+                            <td>
+                                <ul class="dropdown_act">
+                                    <i class="fa-sharp fa-solid fa-ellipsis"></i>
+                                    <div class="act">
+                                        <a href="transaction_delete.php?transaction_on=<?php echo $row['transaction_on']; ?>">Delete</a>
+                                    </div>
+                                </ul>
+                            </td>
+                        </tr>
+                    <?php } ?>
+                </table>
             </div>
         </div>
     </main>
