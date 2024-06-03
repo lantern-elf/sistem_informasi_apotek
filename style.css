@@ -201,7 +201,7 @@ nav{
 .input_list>li{
     display: grid;
     justify-content: start;
-    padding-bottom: 8px;
+    padding-block: 8px;
 }
 
 .input_list label{
@@ -351,4 +351,8 @@ table a{
 
 .data{
     display: flex;
+}
+
+.edit_input li {
+    list-style-type: none;
 }
