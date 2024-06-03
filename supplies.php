@@ -32,7 +32,7 @@ include 'connection.php';
                         <th>Action</th>
                     </tr>
                     <?php
-                    error_reporting(0);
+                    // error_reporting(0);
                     $get_data = mysqli_query($db, "SELECT * FROM supplies");
                     $no = 1;
                     foreach ($get_data as $row) { ?>

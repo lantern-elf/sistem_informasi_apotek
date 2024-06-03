@@ -1,7 +1,25 @@
 <?php
 include "connection.php";
+$get_item_id = $_GET['item_id'];
 
-if (isset($_POST['login'])) {
+if (isset($_POST['edit'])) {
+    $item_id = $_POST['item_id'];
+    $item_name = $_POST['item_name'];
+    $item_category = $_POST['item_category'];
+    $item_total = $_POST['item_total'];
+    $item_price = $_POST['item_price'];
+
+    $sql = "UPDATE supplies SET item_id='$item_id', item_name='$item_name', item_category='$item_category', item_total='$item_total', price=$item_price WHERE item_id='$get_item_id'";
+    if (!$item_name || !$item_category || !$item_total || !$item_price) {
+        echo "<script> alert ('Enter the item!'); window.location='supplies.php';</script>";
+    } else {
+        $update_data = $db->query($sql);
+        if ($update_data) {
+            echo "<script> alert ('Item Updated'); window.location='supplies.php';</script>";
+        } else {
+            echo "<script> alert ('Update Failed'); window.location='supplies.php';</script>";
+        }
+    }
 }
 ?>
 
@@ -19,7 +37,6 @@ if (isset($_POST['login'])) {
     <div class="parent display_center">
         <div class="card login_container">
             <?php
-            $get_item_id = $_GET['item_id'];
             $get_data = mysqli_query($db, "SELECT * FROM supplies WHERE item_id='$get_item_id'");
             while ($row = mysqli_fetch_array($get_data)) { ?>
                 <form action="" method="post">
@@ -50,7 +67,7 @@ if (isset($_POST['login'])) {
                             <input class="login_input_box" placeholder="Item price" type="number" name="item_price" value="<?php echo $row['price']; ?>">
                         </li>
                         <li>
-                            <input class="login_input_box" type="submit">
+                            <input class="login_input_box" type="submit" name="edit">
                         </li>
                     </ul>
                 </form>

@@ -4,7 +4,7 @@ $item_name = $_POST['item_name'];
 $item_category = $_POST['item_category'];
 $item_total = $_POST['item_total'];
 $item_price = $_POST['item_price'];
-$sql = "INSERT INTO supplies(item_name, item_category, item_total, price) VALUES('$item_name', '$item_total', '$item_price')";
+$sql = "INSERT INTO supplies(item_name, item_category, item_total, price) VALUES('$item_name', '$item_category', '$item_total', '$item_price')";
 $select = "SELECT * FROM supplies WHERE item_name = '$item_name'";
 $result = $db->query($select);
 $row = mysqli_fetch_array($result);
@@ -26,6 +26,10 @@ if ($result->num_rows > 0) {
         echo "<script> alert ('Enter the item!'); window.location='supplies.php';</script>";
     } else {
         $insert_data = $db->query($sql);
-        echo "<script> alert ('Item entered'); window.location='supplies.php';</script>";
+        if ($insert_data) {
+            echo "<script> alert ('Item entered'); window.location='supplies.php';</script>";
+        } else {
+            echo "<script> alert ('Insert Failed'); window.location='supplies.php';</script>";
+        }
     }
 }
