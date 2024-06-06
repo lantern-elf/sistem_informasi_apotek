@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 30 Bulan Mei 2024 pada 06.31
+-- Waktu pembuatan: 04 Jun 2024 pada 04.25
 -- Versi server: 10.4.32-MariaDB
 -- Versi PHP: 8.0.30
 
@@ -24,22 +24,28 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `suplies`
+-- Struktur dari tabel `supplies`
 --
 
-CREATE TABLE `suplies` (
+CREATE TABLE `supplies` (
   `item_id` int(11) NOT NULL,
   `item_name` varchar(30) NOT NULL,
+  `item_category` enum('Over-the-counter drugs','Limited over-the-counter drugs','Hard drugs') NOT NULL,
   `item_total` int(11) NOT NULL,
   `price` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `suplies`
+-- Dumping data untuk tabel `supplies`
 --
 
-INSERT INTO `suplies` (`item_id`, `item_name`, `item_total`, `price`) VALUES
-(1, 'Paracetamol', 10, 150);
+INSERT INTO `supplies` (`item_id`, `item_name`, `item_category`, `item_total`, `price`) VALUES
+(1, 'Paracetamol', 'Over-the-counter drugs', 100, 5000),
+(2, 'Amoxil ', 'Over-the-counter drugs', 100, 20000),
+(3, 'Panadol', 'Over-the-counter drugs', 80, 20000),
+(4, 'Paramex', 'Over-the-counter drugs', 80, 20000),
+(5, 'Oskadon', 'Over-the-counter drugs', 80, 5000),
+(6, 'Panadol Regular', 'Over-the-counter drugs', 20, 5000);
 
 -- --------------------------------------------------------
 
@@ -48,11 +54,24 @@ INSERT INTO `suplies` (`item_id`, `item_name`, `item_total`, `price`) VALUES
 --
 
 CREATE TABLE `transactions` (
-  `transaction on` datetime NOT NULL DEFAULT current_timestamp(),
-  `item_id` int(11) NOT NULL,
+  `transaction_on` datetime NOT NULL DEFAULT current_timestamp(),
+  `transaction_item_id` int(11) NOT NULL,
+  `item_name` varchar(50) NOT NULL,
   `total_item` int(11) NOT NULL,
   `total_price` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data untuk tabel `transactions`
+--
+
+INSERT INTO `transactions` (`transaction_on`, `transaction_item_id`, `item_name`, `total_item`, `total_price`) VALUES
+('2024-06-03 23:03:30', 1, 'Paracetamol', 9, 56600000),
+('2024-06-03 23:03:37', 2, 'Amoxil ', 9, 7900000),
+('2024-06-03 23:03:45', 2, 'Amoxil ', 6, 7720000),
+('2024-06-03 23:03:52', 1, 'Paracetamol', 7, 54800000),
+('2024-06-04 09:16:05', 1, 'Paracetamol', 20, 600000),
+('2024-06-04 09:16:52', 6, 'Panadol Regular', 60, 400000);
 
 -- --------------------------------------------------------
 
@@ -81,16 +100,17 @@ INSERT INTO `users` (`user_id`, `username`, `password`, `admin`, `create_at`) VA
 --
 
 --
--- Indeks untuk tabel `suplies`
+-- Indeks untuk tabel `supplies`
 --
-ALTER TABLE `suplies`
-  ADD PRIMARY KEY (`item_id`);
+ALTER TABLE `supplies`
+  ADD PRIMARY KEY (`item_id`),
+  ADD UNIQUE KEY `item_name` (`item_name`);
 
 --
 -- Indeks untuk tabel `transactions`
 --
 ALTER TABLE `transactions`
-  ADD UNIQUE KEY `transaction on` (`transaction on`);
+  ADD UNIQUE KEY `transaction on` (`transaction_on`);
 
 --
 -- Indeks untuk tabel `users`
@@ -104,10 +124,10 @@ ALTER TABLE `users`
 --
 
 --
--- AUTO_INCREMENT untuk tabel `suplies`
+-- AUTO_INCREMENT untuk tabel `supplies`
 --
-ALTER TABLE `suplies`
-  MODIFY `item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+ALTER TABLE `supplies`
+  MODIFY `item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT untuk tabel `users`

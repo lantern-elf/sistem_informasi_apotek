@@ -4,13 +4,13 @@ let navSupplies = document.querySelector('.navbar_supplies');
 let navAbout = document.querySelector('.navbar_about');
 let accentColor = `#9DDE8B`;
 
-if (urlLocate == "/supplies.php"){
+if (urlLocate == "/supplies.php" || urlLocate == "/apotek/supplies.php"){
     navSupplies.style.background = accentColor;
 }
-else if (urlLocate == "/index.php"){
+else if (urlLocate == "/index.php" || urlLocate == "/apotek/index.php"){
     navHome.style.background = accentColor;
 }
-else if (urlLocate == "/about.php"){
+else if (urlLocate == "/about.php" || urlLocate == "/apotek/about.php"){
     navAbout.style.background = accentColor;
 }
 

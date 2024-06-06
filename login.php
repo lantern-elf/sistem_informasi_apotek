@@ -13,8 +13,7 @@ if (isset($_POST['login'])) {
     if ($result->num_rows > 0) {
         $_SESSION['username'] = $row['username'];
         $_SESSION['password'] = $row['password'];
-        echo "<script> alert ('Login Succeed')</script>";
-        header('location:index.php');
+        echo "<script> alert ('Login Succeed'); window.location='index.php';</script>";
     } else {
         echo "<script> alert ('Invalid username or password')</script>";
     }
