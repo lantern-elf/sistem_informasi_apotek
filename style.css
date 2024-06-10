@@ -110,7 +110,7 @@ nav{
     background-color: var(--card);
     margin: 16px;
     padding: 8px;
-    border-radius: 15px;
+    border-radius: 8px;
 }
 
 .nav_menu {
@@ -164,7 +164,7 @@ nav{
 
 .card {
     background-color: var(--card);
-    border-radius: 15px;
+    border-radius: 8px;
 }
 
 .login_container {
@@ -276,7 +276,7 @@ nav{
 }
 
 main{
-    height: 100vh;
+    height: fit-content;
     padding: 16px;
 }
 
@@ -354,4 +354,19 @@ table a{
 
 .edit_input li {
     list-style-type: none;
+}
+
+.card_about{
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid black;
+    text-align: center;
+}
+
+.content_about{
+    height: 75vh;
+}
+
+footer{
+    height: 5vh;
 }

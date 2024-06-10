@@ -16,9 +16,20 @@ include 'connection.php';
 
 <body>
     <?php include 'layout/nav.html' ?>
-    <main class="content" id="content">
-
+    <main class="content_about" id="content">
+        <div class="card_about">
+            <h1>ABOUT</h1>
+            <p>
+                This is a Apotek information sistem web based. This web created with Html, CSS, and Javascript as front-end and Php as back-end, also uses mysql as database.
+            </p>
+        </div>
     </main>
+    <footer>
+        <hr />
+        <p>
+            Created by R.M. Arsy
+        </p>
+    </footer>
 </body>
 <script src="main.js"></script>
 
