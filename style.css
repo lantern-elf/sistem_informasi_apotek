@@ -236,6 +236,10 @@ nav{
     background-color: var(--accent);
 }
 
+.home_header{
+    font-size: 32px;
+}
+
 .account {
     margin: 5px;
     display: flex;
@@ -369,4 +373,27 @@ table a{
 
 footer{
     height: 5vh;
+}
+
+.overwiew{
+    display: flex;
+    justify-content: block;
+    padding: 4px;
+}
+
+.overwiew>div{
+    display: block;
+    border: black 1px solid;
+    margin-inline-end: 16px;
+    padding: 8px;
+}
+
+.card_overview{
+    width: fit-content;
+    padding: 8px;
+    font-size: 52px;
+    background-color: #006769;
+    border-radius: 8px;
+    color: white ;
+    font-weight: bold;
 }

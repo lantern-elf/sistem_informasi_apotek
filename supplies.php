@@ -49,7 +49,7 @@ include 'connection.php';
                                     <div class="act">
                                         <a href="supplies_delete.php?item_id=<?php echo $row['item_id']; ?>">Delete</a>
                                         <a href="supplies_edit.php?item_id=<?php echo $row['item_id']; ?>">Edit</a>
-                                        <a href="supplies_buy.php?item_id=<?php echo $row['item_id']; ?>">Buy</a>
+                                        <a href="supplies_buy.php?item_id=<?php echo $row['item_id']; ?>">Purhcase</a>
                                     </div>
                                 </ul>
                             </td>
@@ -84,11 +84,11 @@ include 'connection.php';
                 <table class="supplies_table">
                     <tr>
                         <th>No</th>
-                        <th>Transactions On</th>
-                        <th>Item Id</th>
-                        <th>Item Name</th>
-                        <th>Total Item</th>
-                        <th>Total Price</th>
+                        <th>Date</th>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Total</th>
+                        <th>Price</th>
                         <th>Action</th>
                     </tr>
                     <?php
