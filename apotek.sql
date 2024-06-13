@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 04 Jun 2024 pada 04.25
+-- Waktu pembuatan: 13 Jun 2024 pada 03.51
 -- Versi server: 10.4.32-MariaDB
 -- Versi PHP: 8.0.30
 
@@ -40,12 +40,13 @@ CREATE TABLE `supplies` (
 --
 
 INSERT INTO `supplies` (`item_id`, `item_name`, `item_category`, `item_total`, `price`) VALUES
-(1, 'Paracetamol', 'Over-the-counter drugs', 100, 5000),
+(1, 'Paracetamol', 'Over-the-counter drugs', 5, 5000),
 (2, 'Amoxil ', 'Over-the-counter drugs', 100, 20000),
-(3, 'Panadol', 'Over-the-counter drugs', 80, 20000),
+(3, 'Panadol', 'Over-the-counter drugs', 78, 20000),
 (4, 'Paramex', 'Over-the-counter drugs', 80, 20000),
 (5, 'Oskadon', 'Over-the-counter drugs', 80, 5000),
-(6, 'Panadol Regular', 'Over-the-counter drugs', 20, 5000);
+(6, 'Panadol Regular', 'Over-the-counter drugs', 11, 5000),
+(7, 'Bodrex', 'Over-the-counter drugs', 30, 20000);
 
 -- --------------------------------------------------------
 
@@ -71,7 +72,12 @@ INSERT INTO `transactions` (`transaction_on`, `transaction_item_id`, `item_name`
 ('2024-06-03 23:03:45', 2, 'Amoxil ', 6, 7720000),
 ('2024-06-03 23:03:52', 1, 'Paracetamol', 7, 54800000),
 ('2024-06-04 09:16:05', 1, 'Paracetamol', 20, 600000),
-('2024-06-04 09:16:52', 6, 'Panadol Regular', 60, 400000);
+('2024-06-04 09:16:52', 6, 'Panadol Regular', 60, 400000),
+('2024-06-04 09:28:17', 6, 'Panadol Regular', 9, 100000),
+('2024-06-04 09:29:20', 3, 'Panadol', 2, 1600000),
+('2024-06-10 07:58:09', 1, 'Paracetamol', 90, 500000),
+('2024-06-12 15:55:38', 7, 'Bodrex', 50, 1600000),
+('2024-06-13 08:29:00', 1, 'Paracetamol', 5, 50000);
 
 -- --------------------------------------------------------
 
@@ -127,7 +133,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT untuk tabel `supplies`
 --
 ALTER TABLE `supplies`
-  MODIFY `item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT untuk tabel `users`
